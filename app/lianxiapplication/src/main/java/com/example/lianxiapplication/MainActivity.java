@@ -1,18 +1,13 @@
 package com.example.lianxiapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
 import com.example.mvplibrary.base.BaseActivity;
-import com.example.mvplibrary.base.BasePresenter;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.IView {
 
 
     @Override
     protected void initData() {
-
+        presenter.onStart1();
     }
 
     @Override
@@ -26,7 +21,17 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public BasePresenter getPresenter() {
-        return null;
+    public MainPresenter getPresenter() {
+        return new MainPresenter();
+    }
+
+    @Override
+    public void onShow(Object object) {
+
+    }
+
+    @Override
+    public void onHide(String url) {
+
     }
 }
